@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zone of Interest</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div id="nav-title">Zone of Interest</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#art">Art</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#books">Books</a></li>
+            <li><a href="#music">Music</a></li>
+            <li><a href="#tech">Tech</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#magic">Magic</a></li>
+        </ul>
+    </nav>
+
+    <header class="dashboard-container">
+    <div id="time">12:00:00</div>
+    <span class="separator">|</span>
+    <div class="date-weather-stack">
+        <div id="date">Friday, March 14, 2026</div>
+        <div id="weather">Sunny 45°F</div>
+    </div>
+    <div class="sonar-container">
+    <div class="sonar-sweep"></div>
+    <div class="sonar-ping"></div>
+    </div>
+    <div class="oscillator-visual">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+    
+</header>
+
+<div class="dashboard-main">
+<section id="nasa-apod">
+        <div class="apod-container">
+            <h2 id="apod-title">Loading Cosmic View...</h2>
+            <div class="apod-frame">
+                <img id="apod-image" src="" alt="NASA Astronomy Picture of the Day">
+            </div>
+            <p id="apod-explanation"></p>
+            <p id="apod-copyright" class="dim-text"></p>
+        </div>
+    </section>
+
+    <section id="comms-section">
+    <div id="msg-window" class="msg-window">
+    <div class="msg-header">Messages</div>
+    <div class="msg-body" id="msg-body">
+        <div class="msg bubble-received">System Online. Signal clear.</div>
+        <div class="msg bubble-sent">Acknowledged. Commencing link.</div>
+    </div>
+    <input type="text" placeholder="Type a message..." id="msg-input">
+</div></section>
+</div>
+
+    <main id="app"> <section id="art"><h2>Art</h2></section>
+        <section id="history"><h2>History</h2></section>
+        <section id="books"><h2>Books</h2></section>
+        <section id="music"><h2>Music</h2></section>
+        <section id="tech"><h2>Tech</h2></section>
+        <section id="timeline"><h2>Timeline</h2></section>
+        <section id="magic"><h2>Magic</h2></section>
+    </main>
+
+  <div class="news-ticker-fixed-wrapper">
+    <iframe src="https://rss.app/embed/v1/ticker/8O4Wp7EK6p4aiIgR" 
+            style="width: 100%; height: 50px; border: none; overflow: hidden;" 
+            scrolling="no"></iframe>
+</div>
+  
+    
+    
+    <footer>
+      <div id="status-bar">SYSTEM_OFFLINE</div>
+        <p>Contact: lesdev100@gmail.com</p>
+        <p>&copy; 2026 Zone of Interest. All rights reserved.</p>
+    </footer>
+
+  <script src="./script.js"></script>  
+</body>
+</html>
