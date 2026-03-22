@@ -19,15 +19,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Inject API Key
+        # This replaces the text 'VITE_NASA_KEY' inside script.js with your real secret
+        run: sed -i "s/VITE_NASA_KEY/${{ secrets.VITE_NASA_KEY }}/g" script.js
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This tells GitHub to upload the whole folder
           path: '.'
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 # <--- THIS WAS THE MISSING PIECE
