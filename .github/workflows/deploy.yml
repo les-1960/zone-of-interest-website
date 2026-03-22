@@ -20,9 +20,11 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Inject API Key
-        # This replaces the text 'VITE_NASA_KEY' inside script.js with your real secret
-        run: sed -i "s/VITE_NASA_KEY/${{ secrets.VITE_NASA_KEY }}/g" script.js
-
+        # This targets the exact string 'VITE_NASA_KEY' and replaces it with your secret
+        run: |
+          sed -i "s/'VITE_NASA_KEY'/'${{ secrets.VITE_NASA_KEY }}'/g" script.js
+      
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
