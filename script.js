@@ -57,7 +57,7 @@ function updateDashboardData() {
 async function fetchNASAData() {
     // 1. IMPORTANT: Replace this key if you continue to get 403 or 429 errors.
     // Get your own at: https://api.nasa.gov/
-    const API_KEY = "3fvGTWok7HzImafg0Cbhgze1TnQmeesAVW5kIfXS"; 
+    const API_KEY = import.meta.env.VITE_NASA_KEY; 
     const NASA_URL = `https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`;
     
     try {
