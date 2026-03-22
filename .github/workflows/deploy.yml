@@ -1,25 +1,33 @@
-name: Deploy to GitHub Pages
+name: Deploy Static Site
 
 on:
   push:
     branches: [main]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  build-and-deploy:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
-        env:
-          VITE_NASA_KEY: ${{ secrets.VITE_NASA_KEY }}
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: dist # Vite puts the finished site in the 'dist' folder
-          branch: gh-pages # This sends the "built" code to a separate branch
+          # This tells GitHub to upload the whole folder
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
